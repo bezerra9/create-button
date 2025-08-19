@@ -39,9 +39,46 @@ function handleChange(event) {
   const value = event.target.value;
 
   handleStyle[name](value);
-  showCss()
+  saveValues(name, value);
+  showCss();
 }
 
-function showCss() {
-  cssText.innerHTML = '<span class="copiar-btn">copiar</span>' + '<span class="linha"></span>' + '<span class="textoCss">' + btn.style.cssText.split('; ').join(';</span><span class="textoCss">');
+function saveValues(name, value) {
+  localStorage[name] = value;
 }
+
+function setValues() {
+  const properties = Object.keys(localStorage);
+  properties.forEach(propertie => {
+    handleStyle[propertie](localStorage[propertie]);
+    controles.elements[propertie].value = localStorage[propertie];
+  });
+  showCss();
+}
+setValues();
+
+function showCss() {
+  cssText.innerHTML = '<span class="copiar-btn">Copiar</span>' + '<span class="linha"></span>' + '<span class="textoCss">' + btn.style.cssText.split('; ').join(';</span><span class="textoCss">');
+}
+
+/*    const botaoCopiar = document.querySelector('.copiar-btn'); */
+
+  function clickBotao(event) {
+    if(event.target.classList.contains('copiar-btn')) {
+      const textoCss = document.querySelectorAll('.textoCss')
+      const texto = Array.from(textoCss).map(el => el.innerText)
+      console.log(texto)
+    }
+  }
+  cssText.addEventListener('click', clickBotao)
+  
+  
+  
+  /*     navigator.clipboard.writeText(textoParaCopiar)
+      .then(() => {
+        this.innerText = 'Copiado!'
+  
+        setTimeout(() => {
+          this.innerText = textoOriginal
+        }, 2000)
+      }) */

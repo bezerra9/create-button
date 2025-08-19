@@ -116,18 +116,13 @@ option {
   margin-bottom: 15px;
   /* margin-top: .5rem; */
   border-radius: 50%;
-  background-color: #33c747;
-  box-shadow: 20px 0 0 #fc5653, 40px 0 0 #fdba3f;
+  background-color: #fc5653;
+  box-shadow: 20px 0 0 #fdba3f, 40px 0 0 #33c747;
 }
 
 .linha {
   border-top: 1px solid #ccc;
   margin-bottom: 10px;
-}
-
-.header-css {
-  display: flex;
-  justify-content: space-between;
 }
 
 .copiar-btn {
