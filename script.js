@@ -61,12 +61,19 @@ function showCss() {
   cssText.innerHTML = '<span class="copiar-btn">Copiar</span>' + '<span class="linha"></span>' + '<span class="textoCss">' + btn.style.cssText.split('; ').join(';</span><span class="textoCss">');
 }
 
-/*    const botaoCopiar = document.querySelector('.copiar-btn'); */
+   const botaoCopiar = document.querySelector('.copiar-btn');
+  
 
   function clickBotao(event) {
     if(event.target.classList.contains('copiar-btn')) {
+      const botao = event.target
       const textoCss = document.querySelectorAll('.textoCss')
-      const texto = Array.from(textoCss).map(el => el.innerText)
+      const texto = Array.from(textoCss).map(el => el.innerText).join('\n')
+      navigator.clipboard.writeText(texto)
+      botao.innerText = 'Copiado!'
+      setTimeout (() => {
+        botao.innerText = 'Copiar'
+      }, 1000)
       console.log(texto)
     }
   }
