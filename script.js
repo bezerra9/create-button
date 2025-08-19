@@ -43,5 +43,5 @@ function handleChange(event) {
 }
 
 function showCss() {
-  cssText.innerHTML = '<span>' + btn.style.cssText.split('; ').join(';</span><span>');
+  cssText.innerHTML = '<span class="copiar-btn">copiar</span>' + '<span class="linha"></span>' + '<span class="textoCss">' + btn.style.cssText.split('; ').join(';</span><span class="textoCss">');
 }
