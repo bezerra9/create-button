@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #13071c;
+}
+
+label {
+  display: block;
+  margin-bottom: .5rem;
+  margin-top: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 530;
+  color: white;
+}
+
+input {
+  display: block;
+  margin-left: 10px;
+  margin-bottom: 15px;
+  margin-right: 10px;
+  font-weight: 530;
+  color: black;
+}
+
+select {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: 530;
+  color: white;
+}
+
+.textos, .color {
+  border-radius: 4px;
+  border: none;
+  
+}
+
+option {
+  color: black;
+}
+
+#width,
+#height,
+#borderRadius {
+  cursor: pointer;
+  appearance: none;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+#width::-webkit-slider-thumb,
+#borderRadius::-webkit-slider-thumb,
+#border::-webkit-slider-thumb,
+#height::-webkit-slider-thumb {
+  appearance: none;
+  display: block;
+  height: 15px;
+  width: 15px;
+  background-color: #680081;
+  border-radius: 50%;
+}
+
+.button-creator {
+  display: grid;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  grid-gap: 30px;
+  padding: 30px;
+  grid-template-columns: 200px 1fr;
+}
+
+#fontFamily {
+  color: black;
+}
+
+#controles {
+  font-family: 'IBM Plex Mono', monospace;
+  font: .875rem;
+  background-color: #ce00d1;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, .1);
+}
+
+.css {
+  font-family: 'IBM Plex Mono', monospace;
+  color: #cccccc;
+  background: #2d303e;
+  max-width: 400px;
+  margin-top: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.css span {
+  display: block;
+  margin: .5rem;
+}
